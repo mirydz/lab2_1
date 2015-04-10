@@ -14,4 +14,11 @@ public class BinarySearchTest {
         assertThat(result.isFound(), is(true));
     }
 
+    @Test
+    public void ShouldNotFindElementIfNotInSequence() {
+        int[] seq = { 42 };
+        SearchResult result = BinarySearch.search(21, seq);
+        assertThat(result.isFound(), is(false));
+    }
+
 }
