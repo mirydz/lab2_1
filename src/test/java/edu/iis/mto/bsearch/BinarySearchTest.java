@@ -28,4 +28,11 @@ public class BinarySearchTest {
         assertThat(result.isFound(), is(true));
     }
 
+    @Test
+    public void ShouldFindElementIfAtEnd() {
+        int[] seq = { 42, 45, 48 };
+        SearchResult result = BinarySearch.search(48, seq);
+        assertThat(result.isFound(), is(true));
+    }
+
 }
