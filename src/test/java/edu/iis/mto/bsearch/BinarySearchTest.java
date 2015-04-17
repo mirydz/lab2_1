@@ -52,6 +52,14 @@ public class BinarySearchTest {
         assertThat(result.isFound(), is(false));
     }
 
+    @Test
+    public void ShouldFindElementIfSequenceContainsDuplicates() {
+        int[] seq = { 42, 45, 45, 48, 51, 54 };
+        SearchResult result = BinarySearch.search(45, seq);
+        assertThat(result.isFound(), is(true));
+        assertThat(result.getPosition(), is(3));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void ShouldThrowIllegalArgExceptionIfGivenEmptySequence() {
         int[] seq = {};
