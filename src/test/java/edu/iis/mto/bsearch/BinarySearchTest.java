@@ -52,4 +52,10 @@ public class BinarySearchTest {
         assertThat(result.isFound(), is(false));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void ShouldThrowIllegalArgExceptionIfGivenEmptySequence() {
+        int[] seq = {};
+        BinarySearch.search(42, seq);
+    }
+
 }
